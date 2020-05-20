@@ -44,3 +44,54 @@ $range | Write-Output
 # Write-Output(Get-Date)
 # Write-Output((Get-Date).Year)
 # Write-Output(Get-Date -Format "dddd MM/dd/yyyy HH:mm K")
+
+
+# Foreach loop
+$names = @('Hello','KMUG')
+
+# Perform iteration 
+foreach ($i in $names) {
+    Write-Output $i
+}
+
+# Loop over 
+$process = Get-Process
+
+foreach ($p in $process) {
+    Write-Output "Process Name is $($p.Name)."
+}
+
+# Get file details
+$Path = Get-Location 
+Get-ChildItem |
+     Select-Object Name, Length, LastWriteTime, Fullname 
+
+# Invoke a web request
+(Invoke-WebRequest -Uri "https://k-mug.net/").Links.Href
+$req = Invoke-WebRequest "https://k-mug.net/"
+
+$req.StatusCode
+$req.Headers
+
+#using inbuilt c# static method
+[System.Math]::Sqrt(36)
+
+#using instance 
+$obj = New-Object -TypeName System.String("Hello")
+$obj.Length 
+
+# Invoke a c# function from ps
+
+$code = @"
+    public static class HelloScript
+    {
+        public static string Hello()
+        {
+            return "Hello KMUG";
+        }
+    }
+"@
+
+Add-Type $code
+[HelloScript]::Hello()
+
