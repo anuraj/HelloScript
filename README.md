@@ -8,3 +8,5 @@ From his blog post - http://www.bin-co.com/blog/2008/03/learning-a-new-programmi
 Recently on a K-MUG.net discussion [@praseedpai](https://github.com/praseedpai) told about this concept, and I wrote a helloscript for PowerShell
 
 Thank you [@Padma Pradeep](https://github.com/developerprofiles) for the PR and associated changes.
+
+You can find more Hello Script implementations [here](https://github.com/praseedpai/HelloScript_files)
